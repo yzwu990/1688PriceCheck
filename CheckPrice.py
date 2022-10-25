@@ -32,7 +32,7 @@ import random
 window = tk.Tk()
  
 #给窗口的可视化起名字
-window.title('1688价格查询')
+window.title('1688 Check Price')
  
 #设定窗口的大小(长 x 宽)
 window.geometry('500x370')  
@@ -42,18 +42,18 @@ window.iconbitmap('1688.ico')
 
 ## 设定标签
 #使用说明
-img = tk.PhotoImage(file = 'warning.png')
+img = tk.PhotoImage(file = 'warningE.png')
 label_img = tk.Label(window,image = img)
-label_img.place(x=85,y=10)
+label_img.place(x=35,y=10)
 
 #文件位置
 fileLocation = tk.Label(window, text="", bg='white', fg='black', font=('楷体', 12), width=50, height=2)
 fileLocation.place(x=50, y=250)
 
 #点击按钮导入信息表
-l_priceList = tk.Label(window, text="点击按钮导入信息表", bg='green', fg='white', font=('楷体', 14), width=20, height=2)
+l_priceList = tk.Label(window, text="Import Recording Sheet", bg='green', fg='white', font=('楷体', 14), width=25, height=2)
 # 说明： bg为背景，fg为字体颜色，font为字体，width为长，height为高，这里的长和高是字符的长和高，比如height=2,就是标签有2个字符高
-l_priceList.place(x=50, y=190)
+l_priceList.place(x=35, y=200)
 
 
 
@@ -62,7 +62,7 @@ l_priceList.place(x=50, y=190)
 #导入信息表按钮
 def hit_me_p():
 
-    l_priceList.configure(text='信息表已导入',bg='red')
+    l_priceList.configure(text='Sheet imported',bg='red')
     #全局变量，获取装箱单路径
     global priceList
     priceList = filedialog.askopenfilename()
@@ -178,17 +178,17 @@ def generate():
           
     
     #弹出消息框，完成并通报运行时间
-    tkinter.messagebox.showinfo(title='完成', message='恭喜您！价格更新完毕！用时'+runningTime)
+    tkinter.messagebox.showinfo(title='Congrats', message='Sheet updated with success. Running time'+runningTime)
 
 
 ## 放置Button
 #导入信息表按钮
-b_priceList = tk.Button(window, text='1.导入信息表', font=('楷体', 14), width=13, height=1, command=hit_me_p)
-b_priceList.place(x=317, y=200)
+b_priceList = tk.Button(window, text='1.Import sheet', font=('楷体', 14), width=17, height=1, command=hit_me_p)
+b_priceList.place(x=300, y=205)
 
 
 #开始更新按钮
-b_template = tk.Button(window, text='2.开始更新', font=('楷体', 14), width=12, height=1, command=generate)
+b_template = tk.Button(window, text='2.Start', font=('楷体', 14), width=12, height=1, command=generate)
 b_template.place(x=175, y=310)
 
  
